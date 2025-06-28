@@ -41,13 +41,13 @@ See requirements.txt
 ## Steps to run
 
 ## 1. Create and Activate Virtual Environment (Ubuntu)
-# Navigate to project directory
+- Navigate to project directory
 cd /path/to/project
-# Install python3.10-venv
+- Install python3.10-venv
 sudo apt install python3.10-venv
-# Create virtual environment
+- Create virtual environment
 python3 -m venv venv
-# Activate virtual environment
+- Activate virtual environment
 source venv/bin/activate
 
 ## 2. Install Dependencies
@@ -57,11 +57,11 @@ pip install -r requirements.txt
 The database is automatically initialized when services start via the `init_db()` function in `shared_db/db.py`. Ensure the `database.db` file is writable in the project directory.
 
 ## 4. Start Microservices
-# Make the script executable
+- Make the script executable
 chmod +x start_services.sh
-# Run the script to start all services
+- Run the script to start all services
 ./start_services.sh
-# This starts:
+- This starts:
    - API Gateway on http://localhost:5000
    - Authentication Service on http://localhost:5001
    - User Service on http://localhost:5002
@@ -72,7 +72,6 @@ chmod +x start_services.sh
 ## 5. Stopping Services
 To stop all services, use:
 ./stop_services.sh
-
 
 ## Testing the Application
 
