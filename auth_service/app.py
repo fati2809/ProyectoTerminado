@@ -10,8 +10,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import datetime
 import re
 from shared_db.db import get_db_connection, init_db
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 SECRET_KEY = "a8f3c9d2f021ae6b8b76935b8e7f89ad28d76f9d29e3a1cf21e8b2c91566f51a"
 
 def validate_username(username: str) -> bool:

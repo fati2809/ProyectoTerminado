@@ -5,8 +5,64 @@
 [33mPress CTRL+C to quit[0m
  * Restarting with stat
  * Debugger is active!
- * Debugger PIN: 287-605-914
-127.0.0.1 - - [27/Jun/2025 19:36:39] "POST /register_task HTTP/1.1" 200 -
-127.0.0.1 - - [27/Jun/2025 19:37:03] "[31m[1mGET /tasks HTTP/1.1[0m" 401 -
-127.0.0.1 - - [27/Jun/2025 19:37:06] "GET /tasks HTTP/1.1" 200 -
-127.0.0.1 - - [27/Jun/2025 19:37:27] "PUT /tasks/4 HTTP/1.1" 200 -
+ * Debugger PIN: 991-365-211
+127.0.0.1 - - [13/Jul/2025 19:47:29] "GET /tasks/username1 HTTP/1.1" 200 -
+ * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/task_service/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 991-365-211
+127.0.0.1 - - [13/Jul/2025 19:48:38] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:48:41] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:48:44] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:48:46] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:48:50] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:49:39] "GET /tasks/username1 HTTP/1.1" 200 -
+ * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/task_service/app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 991-365-211
+127.0.0.1 - - [13/Jul/2025 19:50:11] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:50:12] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:50:15] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:50:18] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:50:30] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:56:59] "[31m[1mGET /tasks/username1 HTTP/1.1[0m" 401 -
+127.0.0.1 - - [13/Jul/2025 19:57:16] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:57:50] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:57:53] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:57:55] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:58:09] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:58:15] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:58:28] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:59:35] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 19:59:52] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:00:11] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:03:16] "[31m[1mGET /tasks/username1 HTTP/1.1[0m" 401 -
+127.0.0.1 - - [13/Jul/2025 20:03:49] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:04:53] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:04:57] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:06:22] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:06:25] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:06:42] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:06:44] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:06:46] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:06:49] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:07:11] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:09] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:19] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:22] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:29] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:31] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:33] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:37] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:44] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:08:46] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:09:43] "[31m[1mGET /tasks/username1 HTTP/1.1[0m" 401 -
+127.0.0.1 - - [13/Jul/2025 20:10:18] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:11:01] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 20:11:08] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 21:29:47] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 21:35:11] "[31m[1mGET /tasks/username1 HTTP/1.1[0m" 401 -
+127.0.0.1 - - [13/Jul/2025 21:35:23] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 21:36:43] "GET /tasks/username1 HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jul/2025 21:36:58] "GET /tasks/username1 HTTP/1.1" 200 -
