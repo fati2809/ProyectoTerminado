@@ -1,7 +1,9 @@
 import requests
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Habilitamos CORS para permitir peticiones desde otros dominios
 
 AUTH_SERVICE_URL = 'http://localhost:5001'
 USER_SERVICE_URL = 'http://localhost:5002'

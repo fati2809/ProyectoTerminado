@@ -11,9 +11,11 @@ import re
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from shared_db.db import get_db_connection, init_db
+from flask_cors import CORS
 
 #! Creamos una instancia de la aplicación Flask
 app = Flask(__name__)
+CORS(app)  # Habilitamos CORS para permitir peticiones desde otros dominios
 # Clave secreta para JWT, se debe mantener en secreto y no exponer en el código fuente, pero para pruebas se queda así.
 # El token debe llevar el id del usuario y el username
 SECRET_KEY = "a8f3c9d2f021ae6b8b76935b8e7f89ad28d76f9d29e3a1cf21e8b2c91566f51a"
