@@ -4,19 +4,3 @@
  * Running on http://127.0.0.1:5001
 [33mPress CTRL+C to quit[0m
  * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 991-365-211
-127.0.0.1 - - [13/Jul/2025 19:47:27] "POST /login HTTP/1.1" 200 -
- * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/task_service/app.py', reloading
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 991-365-211
- * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/task_service/app.py', reloading
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 991-365-211
-127.0.0.1 - - [13/Jul/2025 19:57:14] "POST /login HTTP/1.1" 200 -
-127.0.0.1 - - [13/Jul/2025 20:03:47] "POST /login HTTP/1.1" 200 -
-127.0.0.1 - - [13/Jul/2025 20:10:16] "POST /login HTTP/1.1" 200 -
-127.0.0.1 - - [13/Jul/2025 21:29:45] "POST /login HTTP/1.1" 200 -
-127.0.0.1 - - [13/Jul/2025 21:35:21] "POST /login HTTP/1.1" 200 -
