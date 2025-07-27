@@ -4,3 +4,7 @@
  * Running on http://127.0.0.1:5003
 [33mPress CTRL+C to quit[0m
  * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 577-221-634
+127.0.0.1 - - [26/Jul/2025 23:02:54] "GET /tasks HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jul/2025 23:03:34] "[33mGET /taskss HTTP/1.1[0m" 404 -
