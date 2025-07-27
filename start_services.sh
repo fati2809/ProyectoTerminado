@@ -39,9 +39,10 @@ start_service() {
     local service_name=$2
     local port=$3
     echo "Iniciando $service_name en el puerto $port..."
-    # Ejecuta app.py con la ruta completa desde el raíz
-    python3 "$PROJECT_DIR/$service_dir/app.py" > "$LOG_DIR/$service_name.log" 2>&1 &
+    cd "$PROJECT_DIR/$service_dir" || exit 1
+    python3 app.py > "$LOG_DIR/$service_name.log" 2>&1 &
     echo "$!" > "$LOG_DIR/$service_name.pid" # Guardamos el PID del proceso
+    cd "$PROJECT_DIR"
 }
 
 # Iniciamos cada microservicio
@@ -52,4 +53,4 @@ start_service "task_service" "task_service" 5003
 
 echo "Todos los microservicios han sido iniciados."
 echo "Logs disponibles en $LOG_DIR"
-echo "Para detener los servicios, usa el comando './stop_services.sh'."
+echo "Para detener los servicios, usa el comando 'stop_services.sh'."

@@ -1,6 +1,37 @@
  * Serving Flask app 'app'
  * Debug mode: on
-[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5000
-[33mPress CTRL+C to quit[0m
- * Restarting with stat
+Traceback (most recent call last):
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/requests/models.py", line 976, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py", line 111, in proxy_task
+    return jsonify(resp.json()), resp.status_code
+  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/requests/models.py", line 980, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
