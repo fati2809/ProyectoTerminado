@@ -8,7 +8,7 @@ import jwt
 app = Flask(__name__)
 CORS(app)
 
-# Configuración del logger con diferentes niveles
+# Configuración del logger con diferentes niveles.
 logging.basicConfig(
     filename='api_gateway.log',
     level=logging.DEBUG,
