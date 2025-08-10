@@ -1,37 +1,543 @@
  * Serving Flask app 'app'
  * Debug mode: on
-Traceback (most recent call last):
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/requests/models.py", line 976, in json
-    return complexjson.loads(self.text, **kwargs)
-  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
-    return self.wsgi_app(environ, start_response)
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 1514, in wsgi_app
-    response = self.handle_exception(e)
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py", line 111, in proxy_task
-    return jsonify(resp.json()), resp.status_code
-  File "/mnt/c/Users/manue/Documents/seguridad/microservices/Backend/venv/lib/python3.10/site-packages/requests/models.py", line 980, in json
-    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
-requests.exceptions.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 600-993-516
+INFO:api_logger:Route: /auth/login Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:35 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:35] "OPTIONS /auth/login HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /login HTTP/1.1" 200 273
+INFO:api_logger:Route: /auth/login Service: unknown_service Method: POST Status: 200 response_time: 0.27s Timestamp: 2025-08-09 19:07:35 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:35] "POST /auth/login HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:38 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:38] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 995
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:07:38 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:38] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:40 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:40] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.10s Timestamp: 2025-08-09 19:07:41 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:41] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897e38eb0523456c98c220b Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:42 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:42] "OPTIONS /task/tasks/6897e38eb0523456c98c220b HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897e38eb0523456c98c220b HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897e38eb0523456c98c220b Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:42 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:42] "PUT /task/tasks/6897e38eb0523456c98c220b HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:43 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:43] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:44 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:44] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:44 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:44] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:45 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:45] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:45 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:45] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:46 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:46] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:07:46 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:46] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:46 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:46] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:47 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:47] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:48 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:48] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:51 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:51] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:52 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:52] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:52 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:52] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:53 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:53] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 995
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:53 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:53] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:07:54 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:54] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:56 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:56] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 178952
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.35s Timestamp: 2025-08-09 19:07:57 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:57] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:07:59 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:07:59] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 999
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:00 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:00] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:01 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:01] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:02 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:02] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:10 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:10] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:11 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:11] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:11 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:11] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:12 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:12] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.07s Timestamp: 2025-08-09 19:08:12 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:12] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:14 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:14] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 995
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:14 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:14] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:15 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:15] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:08:16 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:16] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:16 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:16] "OPTIONS /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:17 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:17] "PUT /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:17 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:17] "PUT /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:17 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:17] "PUT /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:18 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:18] "PUT /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:08:19 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:19] "PUT /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: PUT Status: 200 response_time: 0.10s Timestamp: 2025-08-09 19:08:20 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:20] "PUT /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:20 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:20] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:flask-limiter:ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: proxy_task
+WARNING:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 429 response_time: 0.00s Timestamp: 2025-08-09 19:08:20 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:20] "[31m[1mGET /task/tasks/user/manuel HTTP/1.1[0m" 429 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:29 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:29] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:flask-limiter:ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: proxy_task
+WARNING:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 429 response_time: 0.00s Timestamp: 2025-08-09 19:08:29 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:29] "[31m[1mGET /task/tasks/user/manuel HTTP/1.1[0m" 429 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:49 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:49] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 997
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.22s Timestamp: 2025-08-09 19:08:50 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:50] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:53 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:53] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 187311
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.47s Timestamp: 2025-08-09 19:08:54 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:54] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 187588
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.40s Timestamp: 2025-08-09 19:08:58 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:58] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:08:59 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:08:59] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 188147
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.39s Timestamp: 2025-08-09 19:09:00 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:00] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 188424
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.43s Timestamp: 2025-08-09 19:09:01 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:01] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 188701
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.39s Timestamp: 2025-08-09 19:09:03 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:03] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 188978
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.57s Timestamp: 2025-08-09 19:09:04 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:04] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:09:11 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:11] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 189538
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.39s Timestamp: 2025-08-09 19:09:12 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:12] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 189815
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.45s Timestamp: 2025-08-09 19:09:13 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:13] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 190092
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.46s Timestamp: 2025-08-09 19:09:15 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:15] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:09:37 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:37] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 190652
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.39s Timestamp: 2025-08-09 19:09:38 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:38] "GET /auth/logs HTTP/1.1" 200 -
+INFO:flask-limiter:ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: proxy_auth
+WARNING:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 429 response_time: 0.00s Timestamp: 2025-08-09 19:09:39 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:09:39] "[31m[1mGET /auth/logs HTTP/1.1[0m" 429 -
+INFO:werkzeug: * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 600-993-516
+INFO:werkzeug: * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 600-993-516
+INFO:werkzeug: * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 600-993-516
+INFO:werkzeug: * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 600-993-516
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:12:14 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:14] "OPTIONS /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:12:15 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:15] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 191771
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.39s Timestamp: 2025-08-09 19:12:15 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:15] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:12:33 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:33] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 192331
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.39s Timestamp: 2025-08-09 19:12:33 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:33] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:12:40 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:40] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 192891
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.39s Timestamp: 2025-08-09 19:12:41 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:41] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 193168
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.36s Timestamp: 2025-08-09 19:12:42 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:42] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 193445
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.38s Timestamp: 2025-08-09 19:12:44 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:44] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 193722
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.39s Timestamp: 2025-08-09 19:12:45 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:45] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:12:46 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:46] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 194282
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.41s Timestamp: 2025-08-09 19:12:47 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:47] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 194559
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.40s Timestamp: 2025-08-09 19:12:49 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:49] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 194835
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.41s Timestamp: 2025-08-09 19:12:51 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:51] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 195112
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.35s Timestamp: 2025-08-09 19:12:52 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:52] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:12:53 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:53] "OPTIONS /auth/logs HTTP/1.1" 200 -
+INFO:flask-limiter:ratelimit 10 per 1 minute (127.0.0.1) exceeded at endpoint: proxy_auth
+WARNING:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 429 response_time: 0.00s Timestamp: 2025-08-09 19:12:53 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:12:53] "[31m[1mGET /auth/logs HTTP/1.1[0m" 429 -
+INFO:werkzeug: * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 600-993-516
+INFO:werkzeug: * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 600-993-516
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.02s Timestamp: 2025-08-09 19:16:44 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:44] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 196232
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.97s Timestamp: 2025-08-09 19:16:45 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:45] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:16:47 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:47] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 997
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.52s Timestamp: 2025-08-09 19:16:48 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:48] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:16:49 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:49] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.18s Timestamp: 2025-08-09 19:16:50 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:50] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:16:50 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:50] "OPTIONS /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/689786ec33b04b7c8affa8bf Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:16:51 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:51] "PUT /task/tasks/689786ec33b04b7c8affa8bf HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:52 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:52] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.10s Timestamp: 2025-08-09 19:16:53 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:53] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.11s Timestamp: 2025-08-09 19:16:53 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:53] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:54 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:54] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:54 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:54] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:16:55 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:55] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:56 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:56] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.10s Timestamp: 2025-08-09 19:16:56 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:56] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:56 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:56] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:57 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:57] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:57 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:57] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:57 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:57] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.10s Timestamp: 2025-08-09 19:16:58 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:58] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:58 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:58] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:16:59 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:59] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.12s Timestamp: 2025-08-09 19:16:59 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:16:59] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:00 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:00] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:17:01 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:01] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:17:01 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:01] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.10s Timestamp: 2025-08-09 19:17:01 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:01] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:02 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:02] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:17:03 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:03] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:03 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:03] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:04 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:04] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:05 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:05] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:05 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:05] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:06 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:06] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:17:06 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:06] "OPTIONS /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:07 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:07] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "PUT /tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 104
+INFO:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:17:08 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:08] "PUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1" 200 -
+INFO:flask-limiter:ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: proxy_task
+WARNING:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 429 response_time: 0.00s Timestamp: 2025-08-09 19:17:09 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:09] "[31m[1mPUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1[0m" 429 -
+INFO:flask-limiter:ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: proxy_task
+WARNING:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 429 response_time: 0.00s Timestamp: 2025-08-09 19:17:09 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:09] "[31m[1mPUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1[0m" 429 -
+INFO:flask-limiter:ratelimit 30 per 1 minute (127.0.0.1) exceeded at endpoint: proxy_task
+WARNING:api_logger:Route: /task/tasks/6897870933b04b7c8affa8c0 Service: unknown_service Method: PUT Status: 429 response_time: 0.00s Timestamp: 2025-08-09 19:17:11 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:17:11] "[31m[1mPUT /task/tasks/6897870933b04b7c8affa8c0 HTTP/1.1[0m" 429 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.02s Timestamp: 2025-08-09 19:21:53 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:21:53] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 208613
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.80s Timestamp: 2025-08-09 19:21:54 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:21:54] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/login Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:29:16 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:29:16] "OPTIONS /auth/login HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /login HTTP/1.1" 200 273
+INFO:api_logger:Route: /auth/login Service: unknown_service Method: POST Status: 200 response_time: 0.33s Timestamp: 2025-08-09 19:29:16 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:29:16] "POST /auth/login HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:29:18 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:29:18] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 997
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.16s Timestamp: 2025-08-09 19:29:19 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:29:19] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:29:20 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:29:20] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 210324
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.52s Timestamp: 2025-08-09 19:29:21 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:29:21] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.01s Timestamp: 2025-08-09 19:30:14 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:14] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 210885
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.58s Timestamp: 2025-08-09 19:30:14 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:14] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:30:22 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:22] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 997
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.16s Timestamp: 2025-08-09 19:30:23 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:23] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:30:25 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:25] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 212031
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.52s Timestamp: 2025-08-09 19:30:25 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:25] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 212308
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.49s Timestamp: 2025-08-09 19:30:28 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:28] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:30:29 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:29] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 997
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:30:29 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:29] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 213171
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.81s Timestamp: 2025-08-09 19:30:30 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:30] "GET /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 997
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:30:31 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:31] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:30:32 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:32] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 214021
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 997
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.44s Timestamp: 2025-08-09 19:30:33 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:33] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.09s Timestamp: 2025-08-09 19:30:33 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:33] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 214588
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.43s Timestamp: 2025-08-09 19:30:37 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:37] "GET /auth/logs HTTP/1.1" 200 -
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:30:38 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:38] "OPTIONS /task/tasks/user/manuel HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5003
+DEBUG:urllib3.connectionpool:http://localhost:5003 "GET /tasks/user/manuel HTTP/1.1" 200 997
+INFO:api_logger:Route: /task/tasks/user/manuel Service: unknown_service Method: GET Status: 200 response_time: 0.08s Timestamp: 2025-08-09 19:30:38 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:38] "GET /task/tasks/user/manuel HTTP/1.1" 200 -
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: OPTIONS Status: 200 response_time: 0.00s Timestamp: 2025-08-09 19:30:39 User: anonymous
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:39] "OPTIONS /auth/logs HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /logs HTTP/1.1" 200 215734
+INFO:api_logger:Route: /auth/logs Service: unknown_service Method: GET Status: 200 response_time: 0.41s Timestamp: 2025-08-09 19:30:39 User: manuel
+INFO:werkzeug:127.0.0.1 - - [09/Aug/2025 19:30:39] "GET /auth/logs HTTP/1.1" 200 -
