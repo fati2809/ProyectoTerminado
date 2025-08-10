@@ -1,2 +1,32 @@
 2025-07-26 23:06:31,028 - WARNING -  * Debugger is active!
 2025-07-26 23:06:31,030 - INFO -  * Debugger PIN: 577-221-634
+2025-08-05 19:19:44,021 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-05 19:19:44,022 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-05 19:19:44,071 - INFO -  * Restarting with stat
+2025-08-05 19:19:46,830 - WARNING -  * Debugger is active!
+2025-08-05 19:19:46,832 - INFO -  * Debugger PIN: 600-993-516
+2025-08-05 19:20:17,073 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-08-05 19:20:17,302 - DEBUG - http://localhost:5001 "POST /login HTTP/1.1" 200 109
+2025-08-05 19:20:17,306 - INFO - Route: /auth/login Service: unknown_service Method: POST Status: 200 Time: 0.00s Timestamp: 2025-08-05 19:20:17 User: anonymous
+2025-08-05 19:20:17,308 - INFO - 127.0.0.1 - - [05/Aug/2025 19:20:17] "POST /auth/login HTTP/1.1" 200 -
+2025-08-05 19:20:47,365 - INFO -  * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+2025-08-05 19:20:47,705 - INFO -  * Restarting with stat
+2025-08-05 19:20:51,773 - WARNING -  * Debugger is active!
+2025-08-05 19:20:51,775 - INFO -  * Debugger PIN: 600-993-516
+2025-08-05 19:21:29,220 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-08-05 19:21:29,541 - DEBUG - http://localhost:5001 "POST /login HTTP/1.1" 200 109
+2025-08-05 19:21:29,543 - INFO - Route: /auth/login Service: unknown_service Method: POST Status: 200 Time: 0.00s Timestamp: 2025-08-05 19:21:29 User: anonymous
+2025-08-05 19:21:29,545 - INFO - 127.0.0.1 - - [05/Aug/2025 19:21:29] "POST /auth/login HTTP/1.1" 200 -
+2025-08-05 19:22:44,693 - INFO -  * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+2025-08-05 19:22:44,763 - INFO -  * Restarting with stat
+2025-08-05 19:22:46,958 - WARNING -  * Debugger is active!
+2025-08-05 19:22:46,959 - INFO -  * Debugger PIN: 600-993-516
+2025-08-05 19:22:52,344 - INFO -  * Detected change in '/mnt/c/Users/manue/Documents/seguridad/microservices/backend/api_gateway/app.py', reloading
+2025-08-05 19:22:52,413 - INFO -  * Restarting with stat
+2025-08-05 19:22:55,534 - WARNING -  * Debugger is active!
+2025-08-05 19:22:55,535 - INFO -  * Debugger PIN: 600-993-516
+2025-08-05 19:22:56,596 - DEBUG - Starting new HTTP connection (1): localhost:5001
+2025-08-05 19:22:57,198 - DEBUG - http://localhost:5001 "POST /login HTTP/1.1" 200 109
+2025-08-05 19:22:57,199 - INFO - Route: /auth/login Service: unknown_service Method: POST Status: 200 response_time: 0.00s Timestamp: 2025-08-05 19:22:57 User: anonymous
+2025-08-05 19:22:57,200 - INFO - 127.0.0.1 - - [05/Aug/2025 19:22:57] "POST /auth/login HTTP/1.1" 200 -
