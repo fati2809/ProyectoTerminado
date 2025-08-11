@@ -5,6 +5,4 @@
 [33mPress CTRL+C to quit[0m
  * Restarting with stat
  * Debugger is active!
- * Debugger PIN: 600-993-516
-127.0.0.1 - - [09/Aug/2025 20:03:15] "GET /tasks/user/manuel HTTP/1.1" 200 -
-127.0.0.1 - - [09/Aug/2025 20:03:35] "GET /tasks/user/manuel HTTP/1.1" 200 -
+ * Debugger PIN: 736-695-251

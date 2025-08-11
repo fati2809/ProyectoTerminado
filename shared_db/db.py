@@ -1,56 +1,51 @@
-import sqlite3
 import os
+import sqlite3
+import pymongo
 from werkzeug.security import generate_password_hash
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Conexión MongoDB
+MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://lopezuribefatima:EfTdWf9y89LZn9j7@cluster0.x7tqlrq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client = pymongo.MongoClient(MONGO_URI)
+db = client["task_db"]
+users_collection = db["users"]
 
 def get_db_connection() -> sqlite3.Connection:
-    """Creates a connection to the shared database with row_factory."""
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     db_path = os.path.join(base_dir, 'shared_db', 'database.db')
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
 
-def init_db():
-    """Initializes the shared database schema and adds MFA fields if needed."""
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    db_path = os.path.join(base_dir, 'shared_db', 'database.db')
-    conn = sqlite3.connect(db_path)
+def sync_sqlite_users_to_mongo():
+    conn = get_db_connection()
     cursor = conn.cursor()
-
-    # Crear tabla users si no existe
-    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='users'")
-    if not cursor.fetchone():
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS users(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT NOT NULL UNIQUE,
-                password TEXT NOT NULL,
-                status INTEGER DEFAULT 1,
-                two_factor_secret TEXT,
-                two_factor_enabled BOOLEAN DEFAULT FALSE
-            )
-        """)
-        # Insertar usuarios de prueba
-        users = [
-            ('username1', 'Hola.123', 1),
-            ('username2', 'Hola.123', 1),
-            ('username3', 'Hola.123', 1),
-            ('username4', 'Hola.123', 1)
-        ]
-        for user in users:
-            username, password, status = user
-            cursor.execute(
-                "INSERT OR IGNORE INTO users (username, password, status, two_factor_enabled) VALUES (?, ?, ?, ?)",
-                (username, generate_password_hash(password), status, False)
-            )
-    else:
-        # Verificar y agregar columnas solo si no existen
-        cursor.execute("PRAGMA table_info(users)")
-        columns = {info[1] for info in cursor.fetchall()}  # Conjunto de nombres de columnas
-        if 'two_factor_secret' not in columns:
-            cursor.execute("ALTER TABLE users ADD COLUMN two_factor_secret TEXT")
-        if 'two_factor_enabled' not in columns:
-            cursor.execute("ALTER TABLE users ADD COLUMN two_factor_enabled BOOLEAN DEFAULT FALSE")
-
-    conn.commit()
+    cursor.execute("SELECT * FROM users")
+    users = cursor.fetchall()
+    
+    for user in users:
+        user_doc = {
+            "username": user["username"],
+            "password": user["password"],  # Ya hash de SQLite
+            "status": user["status"],
+            "two_factor_secret": user["two_factor_secret"],
+            "two_factor_enabled": user["two_factor_enabled"]
+        }
+        users_collection.update_one(
+            {"username": user_doc["username"]},
+            {"$set": user_doc},
+            upsert=True
+        )
     conn.close()
+    print(f"Sincronizados {len(users)} usuarios de SQLite a MongoDB")
+
+# Ejecutar sincronización justo después de iniciar SQLite
+def init_db_and_sync():
+    # Aquí iría tu función init_db() para crear tablas e insertar datos
+    init_db()
+    sync_sqlite_users_to_mongo()
+
+if __name__ == '__main__':
+    init_db_and_sync()

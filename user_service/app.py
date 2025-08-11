@@ -19,7 +19,9 @@ CORS(app)
 SECRET_KEY = os.getenv("SECRET_KEY", "a8f3c9d2f021ae6b8b76935b8e7f89ad28d76f9d29e3a1cf21e8b2c91566f51a")
 
 # Configuración de MongoDB Atlas
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://manuel:t9EXNA8qU7DOjUXI@cluster0.baf6uby.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://lopezuribefatima:EfTdWf9y89LZn9j7@cluster0.x7tqlrq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+
+
 client = pymongo.MongoClient(MONGO_URI)
 db = client["task_db"]
 users_collection = db["users"]
