@@ -1,37 +1,12 @@
 #!/bin/bash
-# Script para iniciar todos los microservicios del proyecto
-# Ejecuta cada servicio en segundo plano
+# Script para iniciar todos los microservicios del proyecto en Render
+# El api_gateway escucha en el puerto asignado por Render (variable $PORT)
+# Los otros servicios usan puertos internos fijos
 
-# Definimos el directorio del proyecto
 PROJECT_DIR="$(pwd)"
-#VENV_DIR="$PROJECT_DIR/venv"   # Comentado para evitar error
 LOG_DIR="$PROJECT_DIR/logs"
 
-# Creamos el directorio de logs si no existe
 mkdir -p "$LOG_DIR"
-
-# Verificamos si el entorno virtual existe
-#if [ ! -d "$VENV_DIR" ]; then
-#    echo "Error: No se encontró el entorno virtual en $VENV_DIR"
-#    exit 1
-#fi
-
-# Activamos el entorno virtual
-#source "$VENV_DIR/bin/activate"
-
-# Verificamos si los puertos están ocupados
-check_port() {
-    local port=$1
-    if lsof -i:$port > /dev/null; then
-        echo "Error: El puerto $port ya está en uso."
-        exit 1
-    fi
-}
-
-check_port 5000
-check_port 5001
-check_port 5002
-check_port 5003
 
 # Función para iniciar un servicio
 start_service() {
@@ -40,13 +15,28 @@ start_service() {
     local port=$3
     echo "Iniciando $service_name en el puerto $port..."
     cd "$PROJECT_DIR/$service_dir" || exit 1
+    
+    # Exportamos la variable PORT para que el servicio escuche en el puerto indicado
+    export PORT=$port
+    
+    # Ejecutamos la app en segundo plano y guardamos logs y PID
     python3 app.py > "$LOG_DIR/$service_name.log" 2>&1 &
-    echo "$!" > "$LOG_DIR/$service_name.pid" # Guardamos el PID del proceso
+    echo "$!" > "$LOG_DIR/$service_name.pid"
+    
     cd "$PROJECT_DIR"
 }
 
-# Iniciamos cada microservicio
-start_service "api_gateway" "api_gateway" 5000
+# El api_gateway debe escuchar en el puerto que Render asigna para tráfico externo
+if [ -z "$PORT" ]; then
+    echo "Error: La variable de entorno PORT no está definida."
+    echo "Render asigna esta variable automáticamente para el puerto público."
+    exit 1
+fi
+
+# Iniciar api_gateway en el puerto asignado por Render
+start_service "api_gateway" "api_gateway" "$PORT"
+
+# Iniciar los microservicios internos en puertos fijos
 start_service "auth_service" "auth_service" 5001
 start_service "user_service" "user_service" 5002
 start_service "task_service" "task_service" 5003
