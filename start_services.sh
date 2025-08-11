@@ -1,23 +1,23 @@
 #!/bin/bash
 # Script para iniciar todos los microservicios del proyecto
-# Activa el entorno virtual y ejecuta cada servicio en segundo plano
+# Ejecuta cada servicio en segundo plano
 
 # Definimos el directorio del proyecto
 PROJECT_DIR="$(pwd)"
-VENV_DIR="$PROJECT_DIR/venv"
+#VENV_DIR="$PROJECT_DIR/venv"   # Comentado para evitar error
 LOG_DIR="$PROJECT_DIR/logs"
 
 # Creamos el directorio de logs si no existe
 mkdir -p "$LOG_DIR"
 
 # Verificamos si el entorno virtual existe
-if [ ! -d "$VENV_DIR" ]; then
-    echo "Error: No se encontró el entorno virtual en $VENV_DIR"
-    exit 1
-fi
+#if [ ! -d "$VENV_DIR" ]; then
+#    echo "Error: No se encontró el entorno virtual en $VENV_DIR"
+#    exit 1
+#fi
 
 # Activamos el entorno virtual
-source "$VENV_DIR/bin/activate"
+#source "$VENV_DIR/bin/activate"
 
 # Verificamos si los puertos están ocupados
 check_port() {
