@@ -293,4 +293,6 @@ def proxy_task(path):
 
 if __name__ == '__main__':
     init_db()  # Inicializar la base de datos con datos de prueba
-    app.run(port=5000, debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Usa variable PORT si está definida, sino 10000 por defecto
+app.run(host='0.0.0.0', port=port)
+
