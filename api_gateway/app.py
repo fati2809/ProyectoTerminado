@@ -292,8 +292,8 @@ def proxy_task(path):
     return forward_request(TASK_SERVICE_URL)
 
 if __name__ == '__main__':
-    init_db()  # Inicializar la base de datos con datos de prueba
-port = int(os.environ.get("PORT", 5000))  # 5000 solo para correr localmente
+    init_db()
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
 
 
