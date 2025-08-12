@@ -48,9 +48,9 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger('api_logger')
 
 # URLs de servicios
-AUTH_SERVICE_URL = os.getenv("AUTH_SERVICE_URL", "http://localhost:5001")
-USER_SERVICE_URL = os.getenv("USER_SERVICE_URL", "http://localhost:5002")
-TASK_SERVICE_URL = os.getenv("TASK_SERVICE_URL", "http://localhost:5003")
+AUTH_SERVICE_URL = os.getenv("AUTH_SERVICE_URL", "https://auth-service-or5z.onrender.com")
+USER_SERVICE_URL = os.getenv("USER_SERVICE_URL", "https://user-service-836y.onrender.com")
+TASK_SERVICE_URL = os.getenv("TASK_SERVICE_URL", "https://task-service-wdmp.onrender.com")
 SECRET_KEY = os.getenv(
     "SECRET_KEY",
     "a8f3c9d2f021ae6b8b76935b8e7f89ad28d76f9d29e3a1cf21e8b2c91566f51a"
