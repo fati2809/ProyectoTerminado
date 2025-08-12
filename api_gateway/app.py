@@ -17,7 +17,7 @@ load_dotenv()
 
 app = Flask(__name__)
 # Habilitar CORS solo para frontend especificado (mejor que usar '*')
-CORS(app, resources={r"/*": {"origins": ["http://localhost:4200", "http://158.69.197.251:4200"]}})
+CORS(app)
 
 # Configuración de MongoDB Atlas
 MONGO_URI = os.getenv(
@@ -295,4 +295,5 @@ if __name__ == '__main__':
     init_db()  # Inicializar la base de datos con datos de prueba
     port = int(os.environ.get("PORT", 10000))  # Usa variable PORT si está definida, sino 10000 por defecto
 app.run(host='0.0.0.0', port=port)
+
 
